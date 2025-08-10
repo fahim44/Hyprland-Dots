@@ -3,7 +3,7 @@
 
 clear
 wallpaper=$HOME/.config/hypr/wallpaper_effects/.wallpaper_current
-waybar_style="$HOME/.config/waybar/style/[Extra] Modern-Combined - Transparent.css"
+waybar_style="$HOME/.config/waybar/style/[Wallust] Colored.css"
 waybar_config="$HOME/.config/waybar/configs/[TOP] Default"
 waybar_config_laptop="$HOME/.config/waybar/configs/[TOP] Default Laptop" 
 
@@ -461,7 +461,7 @@ fi
 
 printf "${INFO} - copying dotfiles ${SKY_BLUE}first${RESET} part\n"
 # Config directories which will ask the user whether to replace or not
-DIRS="ags fastfetch kitty rofi swaync"
+DIRS="ags fastfetch kitty rofi swaync alacritty khal vdirsyncer"
 
 for DIR2 in $DIRS; do
   DIRPATH="$HOME/.config/$DIR2"

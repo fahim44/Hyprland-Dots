@@ -1,0 +1,19 @@
+[general]
+import = ["~/.config/alacritty/themes/themes/blood_moon.toml"]
+
+[window]
+opacity = 0.9
+padding.x = 5
+padding.y = 5
+
+[font]
+normal.family = "JetBrainsMonoNL Nerd Font"
+size = 16
+
+[cursor.style]
+shape = "Beam"
+blinking = "On"
+
+[colors.primary]
+foreground = "#dddddd"
+background = "#000000"

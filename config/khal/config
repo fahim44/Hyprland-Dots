@@ -1,0 +1,10 @@
+[calendars]
+  [[personal]]
+    path= ~/.calendars/personal/
+    color = dark blue
+    priority = 10
+
+  [[dev]]
+    path = ~/.calendars/e-dev-team_shared_by_dev@e.email/
+    color = yellow
+    priority = 20

@@ -6,5 +6,35 @@
 /* IMPORTANT, be mindful with , or ". else waybar will not start */
 
 {
+  "custom/khal": {
+    "format": "{}",
+    "tooltip": true,
+    "interval": 3600,
+    "format-icons": {
+        "default": " "
+    },
+    "exec": "$HOME/.config/hypr/UserScripts/khal_waybar.py",
+    "return-type": "json"
+  },
 
+  "custom/praytimes": {
+    "format": "{}",
+    "tooltip": true,
+    "interval": 3600,
+    "format-icons": {
+        "default": "🕋 "
+    },
+    "exec": "$HOME/.config/hypr/UserScripts/praytimes.py",
+    "return-type": "json"
+  },
+
+  "custom/hyprsunset": {
+	"format": "🌄 ",
+	"return-type": "json",
+	"escape": true,
+	"exec-on-event": true,
+	"interval": 60,
+	"exec": "$HOME/.config/hypr/UserScripts/Hyprsunset.sh status",
+	"on-click": "$HOME/.config/hypr/UserScripts/Hyprsunset.sh toggle",
+  },
 }
