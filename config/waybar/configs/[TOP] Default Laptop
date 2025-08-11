@@ -41,7 +41,7 @@
     "custom/praytimes",
     "custom/weather",
     "custom/separator#dot-line",
-	"custom/hyprsunset",
+  	"custom/hyprsunset",
     "idle_inhibitor",
     "custom/hint",
   ],
