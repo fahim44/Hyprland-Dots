@@ -282,7 +282,7 @@
 		"class<.*bruno.*>": "🐶",
 		"class<.*nwg-displays.*>": "📺",
 		"class<.*DBeaver.*>": "🦫",
-		"class<.*gpicview.*|.*ueberzugpp.*>": "🖼",
+		"class<.*gpicview.*|.*ueberzugpp.*|org.gnome.Loupe>": "🖼",
 
 		"class<.*lstopo.*>": "🧰",
 		"class<.*httptoolkit.*>": "🖧",
