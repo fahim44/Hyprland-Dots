@@ -461,7 +461,7 @@ fi
 
 printf "${INFO} - copying dotfiles ${SKY_BLUE}first${RESET} part\n"
 # Config directories which will ask the user whether to replace or not
-DIRS="ags fastfetch kitty rofi swaync alacritty khal vdirsyncer"
+DIRS="ags fastfetch kitty rofi swaync alacritty khal vdirsyncer nvim"
 
 for DIR2 in $DIRS; do
   DIRPATH="$HOME/.config/$DIR2"
