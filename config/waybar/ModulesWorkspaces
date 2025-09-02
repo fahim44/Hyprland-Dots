@@ -15,7 +15,7 @@
 	"on-scroll-up": "hyprctl dispatch workspace e+1",
 	"on-scroll-down": "hyprctl dispatch workspace e-1",
     "persistent-workspaces": {
-      "*": 5
+      "*": 1
 	},
 	"format-icons": {
 		"active": "",
@@ -32,7 +32,7 @@
 	"on-scroll-up": "hyprctl dispatch workspace e+1",
 	"on-scroll-down": "hyprctl dispatch workspace e-1",
     "persistent-workspaces": {
-      "*": 5
+      "*": 1
 	},
 	"format-icons": {
 		"1": "I",
@@ -57,7 +57,7 @@
 	"on-scroll-down": "hyprctl dispatch workspace e-1",
 	"show-special": false,
     "persistent-workspaces": {
-      "*": 5
+      "*": 1
 	},
 	"format": "{icon}",
 	"format-icons": {
@@ -73,7 +73,7 @@
 	"all-outputs": true,
 	"format": "{icon}",
     "persistent-workspaces": {
-      "*": 5
+      "*": 1
 	},
 	"format-icons": {
 		"1": "一",
@@ -98,7 +98,7 @@
 	"on-scroll-up": "hyprctl dispatch workspace e+1",
 	"on-scroll-down": "hyprctl dispatch workspace e-1",
     "persistent-workspaces": {
-      "*": 5
+      "*": 1
 	},
 		"format-icons": {
 		"1": "Uno",
@@ -150,7 +150,7 @@
 	"on-scroll-up": "hyprctl dispatch workspace e+1",
 	"on-scroll-down": "hyprctl dispatch workspace e-1",
     "persistent-workspaces": {
-      "*": 5
+      "*": 1
 	},
 	"format-icons": {
 		"1": "1",
@@ -176,17 +176,18 @@
 	"on-scroll-up": "hyprctl dispatch workspace e+1",
 	"on-scroll-down": "hyprctl dispatch workspace e-1",
 	"persistent-workspaces": {
-		"*": 5
+		"*": 1
 	  },
 	"format": "{icon} {windows}",
 	"format-window-separator": " ",
-	"window-rewrite-default": " ",
-	"window-rewrite": {		
+	"window-rewrite-default": " {class}",
+	"window-rewrite": {
 		"title<.*amazon.*>": " ",
 		"title<.*reddit.*>": " ",
 
 		"class<firefox|org.mozilla.firefox|librewolf|floorp|mercury-browser|[Cc]achy-browser>": " ",
 		"class<zen>": "󰰷 ",
+		"title<.*[Tt]ransmission.*>": " ",
 		"class<waterfox|waterfox-bin>": " ",
 		"class<microsoft-edge>": " ",
 		"class<Chromium|Thorium|[Cc]hrome>": " ",
@@ -197,7 +198,7 @@
 		"class<kitty|konsole>": " ",
 		"class<kitty-dropterm>": " ",
 		"class<com.mitchellh.ghostty>": " ",
-		"class<org.wezfurlong.wezterm>": " ",
+		"class<org.wezfurlong.wezterm|alacritty>": " ",
 
 		"class<[Tt]hunderbird|[Tt]hunderbird-esr>": " ",
 		"class<eu.betterbird.Betterbird>": " ",
@@ -211,7 +212,6 @@
 		"title<.*facebook.*>": " ",
 		"title<.*reddit.*>": " ",
 
-
 		"title<.*ChatGPT.*>": "󰚩 ",
 		"title<.*deepseek.*>": "󰚩 ",
 		"title<.*qwen.*>": "󰚩 ",
@@ -223,6 +223,7 @@
 		"class<Cider>": "󰎆 ",
 		"title<.*Picture-in-Picture.*>": " ",
 		"title<.*youtube.*>": " ",
+		"class<.*freetube.*>": " ",
 		"class<vlc>": "󰕼 ",
 		"title<.*cmus.*>": " ",
 		"class<[Ss]potify>": " ",
@@ -242,27 +243,57 @@
 		"class<libreoffice-writer>": " ",
 		"class<libreoffice-startcenter>": "󰏆 ",
 		"class<libreoffice-calc>": " ",
+		"class<com.github.xournalpp.xournalpp>": "📑",
 		"title<.*nvim ~.*>": " ",
-		"title<.*vim.*>": " ",
-		"title<.*nvim.*>": " ",
+//		"title<.*vim.*>": " ",
+		"title<.*nvim.*>": " ",
 		"title<.*figma.*>": " ",
 		"title<.*jira.*>": " ",
-		"class<jetbrains-idea>": " ",
+		"class<jetbrains-idea|jetbrains-idea-ce>": " ",
 
-		"class<obs|com.obsproject.Studio>": " ",
+		"class<obsidian>": "🗊",
+		"class<com.obsproject.Studio>": " ",
+//		"class<obs|com.obsproject.Studio>": " ",
 
 		"class<polkit-gnome-authentication-agent-1>": "󰒃 ",
 		"class<nwg-look>": " ",
 		"class<[Pp]avucontrol|org.pulseaudio.pavucontrol>": "󱡫 ",
 		"class<steam>": " ",
-		"class<thunar|nemo>": "󰝰 ",	
-		"class<Gparted>":"",
+		"class<thunar|nemo|dolphin>": "󰝰 ",	
+		"title<.*Yazi.*>": "󰝰 ",	
+	  "class<Gparted>":"",
 		"class<gimp>": " ",
 		"class<emulator>": "📱 ",
-		"class<android-studio>": " ",
-		"class<org.pipewire.Helvum>": "󰓃",
+		"class<android-studio|jetbrains-studio>": " ",
+	  "class<org.pipewire.Helvum>": "󰓃",
 		"class<localsend>":"",
 		"class<PrusaSlicer|UltiMaker-Cura|OrcaSlicer>": "󰹛",
-		}
+
+		"class<fluffychat>":"🗨",
+		"class<im.riot.Riot>":"🗨",
+		"class<schildichat>":"🗨",
+
+		"class<nm-connection-editor>":"󰤢 ",
+
+		"class<.*Keypunch.*>": "✍ ",
+
+		"class<com.vysp3r.ProtonPlus>": " ",
+
+		"class<.*calibre.*>": "📚",
+		"class<.*bruno.*>": "🐶",
+		"class<.*nwg-displays.*>": "📺",
+		"class<.*DBeaver.*>": "🦫",
+		"class<.*gpicview.*|.*ueberzugpp.*|org.gnome.Loupe>": "🖼",
+
+		"class<.*lstopo.*>": "🧰",
+		"class<.*httptoolkit.*>": "🖧",
+		"class<.*yad-icon-browser.*>": "😤",
+		"class<.*kvantummanager.*>": "🌇",
+
+		"class<.*hyprland-share-picker.*>": "🖵",
+		"class<.*xdg-desktop-portal-gtk.*>": "📂",
+
+		"class<.*KeePassXC.*>": "🔐",
+	}
 	},
 }
