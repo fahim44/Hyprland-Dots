@@ -291,6 +291,8 @@
 
 		"class<.*hyprland-share-picker.*>": "🖵",
 		"class<.*xdg-desktop-portal-gtk.*>": "📂",
+
+		"class<.*KeePassXC.*>": "🔐",
 	}
 	},
 }
