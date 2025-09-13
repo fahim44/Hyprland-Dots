@@ -56,10 +56,13 @@ temp = html_data("span[data-testid='TemperatureValue']").eq(0).text()
 
 # current status phrase
 status = html_data("div[data-testid='wxPhrase']").text()
+print(status)
 status = f"{status[:16]}.." if len(status) > 17 else status
+print(status)
 
 # status code
-status_code = html_data("#regionHeader").attr("class").split(" ")[2].split("-")[2]
+# status_code = html_data("#regionHeader").attr("class").split(" ")[2].split("-")[2]
+status_code = ""
 
 # status icon
 icon = (
