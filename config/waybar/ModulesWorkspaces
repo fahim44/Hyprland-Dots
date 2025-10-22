@@ -190,7 +190,7 @@
 		"title<.*[Tt]ransmission.*>": " ",
 		"class<waterfox|waterfox-bin>": " ",
 		"class<microsoft-edge>": " ",
-		"class<Chromium|Thorium|[Cc]hrome>": " ",
+		"class<Chromium|Thorium|[Cc]hrome|[Hh]elium>": " ",
 		"class<brave-browser>": "🦁 ",
 		"class<tor browser>": " ",
 		"class<firefox-developer-edition>": "🦊 ",
