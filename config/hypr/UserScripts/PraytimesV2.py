@@ -121,8 +121,10 @@ class PrayTimes:
     settings = {
         "imsak": "10 min",
         "dhuhr": "0 min",
-        "asr": "Standard",
-        "highLats": "NightMiddle",
+        "asr": "Hanafi",
+        # "asr": "Standard",
+        "highLats": "AngleBased",
+        # "highLats": "NightMiddle",
     }
 
     timeFormat = "12h"

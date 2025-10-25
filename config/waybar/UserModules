@@ -24,7 +24,7 @@
     "format-icons": {
         "default": "🕋 "
     },
-    "exec": "$HOME/.config/hypr/UserScripts/praytimes.py",
+    "exec": "$HOME/.config/hypr/UserScripts/PraytimesV3.js",
     "return-type": "json"
   },
 
