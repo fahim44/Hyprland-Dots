@@ -294,6 +294,8 @@
 		"class<.*xdg-desktop-portal-gtk.*>": "📂",
 
 		"class<.*KeePassXC.*>": "🔐",
+		"class<com.github.hluk.copyq>": "📋",
+		"class<com.nextcloud.desktopclient.nextcloud>": "☁",
 	}
 	},
 }
