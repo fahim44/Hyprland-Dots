@@ -271,7 +271,7 @@
 
 		"class<fluffychat>":"🗨",
 		"class<im.riot.Riot>":"🗨",
-		"class<schildichat>":"🗨",
+		"class<schildichat|Element>":"🗨",
 
 		"class<nm-connection-editor>":"󰤢 ",
 
