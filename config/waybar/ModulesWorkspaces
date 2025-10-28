@@ -293,7 +293,7 @@
 		"class<.*hyprland-share-picker.*>": "🖵",
 		"class<.*xdg-desktop-portal-gtk.*>": "📂",
 
-		"class<.*KeePassXC.*>": "🔐",
+		"class<.*KeePassXC.*|org.gnome.seahorse.Application>": "🔐",
 		"class<com.github.hluk.copyq>": "📋",
 		"class<com.nextcloud.desktopclient.nextcloud>": "☁",
 	}
