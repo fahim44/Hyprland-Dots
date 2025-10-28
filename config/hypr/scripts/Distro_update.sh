@@ -14,7 +14,7 @@ fi
 # Detect distribution and update accordingly
 if command -v topgrade &>/dev/null; then
   alacritty --command topgrade -y
-  notify-send -i "$iDIR/ja.png" -u low 'System' 'has been updated.'
+  # notify-send -i "$iDIR/ja.png" -u low 'System' 'has been updated.'
 elif command -v paru &>/dev/null || command -v yay &>/dev/null; then
   # Arch-based
   if command -v paru &>/dev/null; then
