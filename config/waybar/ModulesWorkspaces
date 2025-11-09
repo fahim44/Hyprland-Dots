@@ -296,6 +296,8 @@
 		"class<.*KeePassXC.*|org.gnome.seahorse.Application>": "🔐",
 		"class<com.github.hluk.copyq>": "📋",
 		"class<com.nextcloud.desktopclient.nextcloud>": "☁",
+		"class<blueman-manager>": "ᛒ",
+		"class<tlpui>": "🔋",
 	}
 	},
 }
