@@ -31,8 +31,9 @@ ags -q && ags &
 # quit quickshell & relaunch quickshell
 #pkill qs && qs &
 
-# Wallust refresh
-${SCRIPTSDIR}/WallustSwww.sh &
+# Wallust refresh (synchronous to ensure colors are ready)
+${SCRIPTSDIR}/WallustSwww.sh
+sleep 0.2
 
 # reload swaync
 swaync-client --reload-config
