@@ -105,7 +105,6 @@
 	"modules": [
 		"custom/swaync",
 		"custom/updater",
-//		"custom/dot_update",
 	]
 },
 
