@@ -397,33 +397,90 @@ class PrayTime {
 // }
 //
 // retrieve the location info
-const response = await fetch("https://ipinfo.io", {
-  method: "GET",
-  headers: {
-    Accept: "application/json",
-  },
-});
-let data = await response.json();
-let loc = data["loc"];
-let locArr = loc.split(",");
-let locLastArr = [Number(locArr[0]), Number(locArr[1])];
+async function getLocationData() {
+  let tryCount = 0;
+  const maxTry = 6;
+  const waitTimeSec = 10;
 
-// retrieve the prayerTimes
-const praytime = new PrayTime("Karachi");
-const times = praytime
-  .location(locLastArr)
-  .timezone(data["timezone"])
-  .format("12h")
-  .getTimes(new Date());
+  while (tryCount < maxTry) {
+    try {
+      const response = await fetch("https://ipinfo.io", {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+        },
+      });
+      return await response.json();
+    } catch (error) {
+      if (tryCount == maxTry - 1) {
+        throw error;
+      }
+    }
 
-// format the output
-let outputData = new Object();
-outputData.text = "🕋";
-let outputBody = "";
-
-for (const [key, value] of Object.entries(times)) {
-  outputBody = outputBody + "<b>" + key + "</b> : " + value + "\n";
+    await sleep(waitTimeSec * 1000);
+    tryCount++;
+  }
 }
-outputData.tooltip = outputBody;
 
-console.log(JSON.stringify(outputData));
+import { readFile, writeFile } from "fs/promises";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const fileName = __dirname + "/PrayTimeV3State";
+const fileEncoding = "utf8";
+
+async function readFromFile() {
+  try {
+    const data = await readFile(fileName, fileEncoding);
+    return data;
+  } catch (err) {
+    throw err;
+  }
+}
+
+async function writeToFile(data) {
+  try {
+    await writeFile(fileName, JSON.stringify(data, null, 2), fileEncoding);
+  } catch (err) {
+    throw err;
+  }
+}
+// const response = await fetch("https://ipinfo.io", {
+//   method: "GET",
+//   headers: {
+//     Accept: "application/json",
+//   },
+// });
+try {
+  let data = await getLocationData();
+  // let data = await response.json();
+  let loc = data["loc"];
+  let locArr = loc.split(",");
+  let locLastArr = [Number(locArr[0]), Number(locArr[1])];
+
+  // retrieve the prayerTimes
+  const praytime = new PrayTime("Karachi");
+  const times = praytime
+    .location(locLastArr)
+    .timezone(data["timezone"])
+    .format("12h")
+    .getTimes(new Date());
+
+  // format the output
+  let outputData = new Object();
+  outputData.text = "🕋";
+  let outputBody = "";
+
+  for (const [key, value] of Object.entries(times)) {
+    outputBody = outputBody + "<b>" + key + "</b> : " + value + "\n";
+  }
+  outputData.tooltip = outputBody;
+
+  writeToFile(outputData);
+
+  console.log(JSON.stringify(outputData));
+} catch (err) {
+  let cachedData = await readFromFile();
+  console.log(JSON.stringify(cachedData));
+}
