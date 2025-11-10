@@ -474,8 +474,8 @@ let times = praytime
 
 // get next prayer period
 const currentTime = new Date().getTime();
-let nextPeriod;
-let nextPeriodName;
+let nextPeriod = -1;
+let nextPeriodName = "---";
 
 for (const [key, value] of Object.entries(times)) {
   if (value >= currentTime) {
@@ -486,7 +486,11 @@ for (const [key, value] of Object.entries(times)) {
 }
 
 praytime.formatTimes(times);
-nextPeriod = praytime.formatTime(nextPeriod);
+if (nextPeriod > 0) {
+  nextPeriod = praytime.formatTime(nextPeriod);
+} else {
+  nextPeriod = "---";
+}
 
 // format the output
 let outputData = new Object();
