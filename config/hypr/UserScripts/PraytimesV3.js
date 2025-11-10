@@ -433,7 +433,7 @@ const fileEncoding = "utf8";
 async function readFromFile() {
   try {
     const data = await readFile(fileName, fileEncoding);
-    return data;
+    return JSON.parse(data);
   } catch (err) {
     throw err;
   }
@@ -452,35 +452,35 @@ async function writeToFile(data) {
 //     Accept: "application/json",
 //   },
 // });
+let data;
 try {
-  let data = await getLocationData();
-  // let data = await response.json();
-  let loc = data["loc"];
-  let locArr = loc.split(",");
-  let locLastArr = [Number(locArr[0]), Number(locArr[1])];
-
-  // retrieve the prayerTimes
-  const praytime = new PrayTime("Karachi");
-  const times = praytime
-    .location(locLastArr)
-    .timezone(data["timezone"])
-    .format("12h")
-    .getTimes(new Date());
-
-  // format the output
-  let outputData = new Object();
-  outputData.text = "🕋";
-  let outputBody = "";
-
-  for (const [key, value] of Object.entries(times)) {
-    outputBody = outputBody + "<b>" + key + "</b> : " + value + "\n";
-  }
-  outputData.tooltip = outputBody;
-
-  writeToFile(outputData);
-
-  console.log(JSON.stringify(outputData));
+  data = await getLocationData();
+  writeToFile(data);
 } catch (err) {
-  let cachedData = await readFromFile();
-  console.log(JSON.stringify(cachedData));
+  data = await readFromFile();
 }
+
+// let data = await response.json();
+let loc = data["loc"];
+let locArr = loc.split(",");
+let locLastArr = [Number(locArr[0]), Number(locArr[1])];
+
+// retrieve the prayerTimes
+const praytime = new PrayTime("Karachi");
+const times = praytime
+  .location(locLastArr)
+  .timezone(data["timezone"])
+  .format("12h")
+  .getTimes(new Date());
+
+// format the output
+let outputData = new Object();
+outputData.text = "🕋";
+let outputBody = "";
+
+for (const [key, value] of Object.entries(times)) {
+  outputBody = outputBody + "<b>" + key + "</b> : " + value + "\n";
+}
+outputData.tooltip = outputBody;
+
+console.log(JSON.stringify(outputData));
