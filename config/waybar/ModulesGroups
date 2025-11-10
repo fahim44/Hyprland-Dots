@@ -138,4 +138,18 @@
         "custom/reboot"
       ]
 },
+
+//prayTime
+"group/praytimes": {
+	"orientation": "inherit",
+	"drawer": {
+		"transition-duration": 500,
+    "children-class": "drawer-child",
+		"transition-left-to-right": true
+        },
+	"modules": [
+		"custom/praytimes#icon",
+		"custom/praytimes",
+	]
+},
 }

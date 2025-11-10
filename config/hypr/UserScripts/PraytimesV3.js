@@ -132,7 +132,6 @@ class PrayTime {
     this.utcTime = Date.UTC(date[0], date[1] - 1, date[2]);
 
     let times = this.computeTimes();
-    this.formatTimes(times);
     return times;
   }
 
@@ -467,15 +466,31 @@ let locLastArr = [Number(locArr[0]), Number(locArr[1])];
 
 // retrieve the prayerTimes
 const praytime = new PrayTime("Karachi");
-const times = praytime
+let times = praytime
   .location(locLastArr)
   .timezone(data["timezone"])
   .format("12h")
   .getTimes(new Date());
 
+// get next prayer period
+const currentTime = new Date().getTime();
+let nextPeriod;
+let nextPeriodName;
+
+for (const [key, value] of Object.entries(times)) {
+  if (value >= currentTime) {
+    nextPeriodName = key;
+    nextPeriod = value;
+    break;
+  }
+}
+
+praytime.formatTimes(times);
+nextPeriod = praytime.formatTime(nextPeriod);
+
 // format the output
 let outputData = new Object();
-outputData.text = "🕋";
+outputData.text = nextPeriodName + "\n" + nextPeriod;
 let outputBody = "";
 
 for (const [key, value] of Object.entries(times)) {

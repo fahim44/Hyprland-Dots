@@ -28,6 +28,15 @@
     "return-type": "json"
   },
 
+
+  "custom/praytimes#icon": {
+    "format": "🕋 ",
+    "tooltip": false,
+    "format-icons": {
+        "default": "🕋 "
+    },
+  },
+
   "custom/hyprsunset": {
 	"format": "🌄 ",
 	"return-type": "json",
