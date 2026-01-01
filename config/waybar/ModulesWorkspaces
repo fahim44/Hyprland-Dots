@@ -299,6 +299,7 @@
 		"class<blueman-manager>": "ᛒ",
 		"class<tlpui|auto-cpufreq>": "🔋",
 		"class<swappy>": "🖻",
+		"class<org.gnome.Solanum>": "🕓",
 	}
 	},
 }
