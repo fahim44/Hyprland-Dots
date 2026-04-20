@@ -251,7 +251,7 @@
 		"title<.*jira.*>": " ",
 		"class<jetbrains-idea|jetbrains-idea-ce>": " ",
 
-		"class<obsidian>": "🗊",
+		"class<obsidian|AppFlowy>": "🗊",
 		"class<com.obsproject.Studio>": " ",
 //		"class<obs|com.obsproject.Studio>": " ",
 
